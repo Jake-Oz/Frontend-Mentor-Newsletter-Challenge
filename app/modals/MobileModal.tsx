@@ -3,12 +3,12 @@
 import useModal from "../hooks/useModal";
 import Modal from "./modal";
 
-interface DesktopModalProps {
+interface MobileModalProps {
   email: string;
 }
 
-const DesktopModal: React.FC<DesktopModalProps> = ({ email }) => {
-  const desktopModal = useModal();
+const MobileModal: React.FC<MobileModalProps> = ({ email }) => {
+  const mobileModal = useModal();
 
   const body = (
     <div>
@@ -21,11 +21,11 @@ const DesktopModal: React.FC<DesktopModalProps> = ({ email }) => {
   );
 
   return (
-    <div className="w-[480px] h-[540px]">
+    <div className="max-w-sm max-h-fit">
       <Modal
         isOpen={true}
-        onClose={desktopModal.onClose}
-        onSubmit={desktopModal.onClose}
+        onClose={mobileModal.onClose}
+        onSubmit={mobileModal.onClose}
         title="Thanks for subscribing!"
         actionLabel="Dismiss Message"
         body={body}
@@ -34,4 +34,4 @@ const DesktopModal: React.FC<DesktopModalProps> = ({ email }) => {
   );
 };
 
-export default DesktopModal;
+export default MobileModal;

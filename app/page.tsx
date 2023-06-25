@@ -7,6 +7,7 @@ import Form from "./components/Form";
 import useModal from "./hooks/useModal";
 import DesktopModal from "./modals/DesktopModal";
 import { useState } from "react";
+import MobileModal from "./modals/MobileModal";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -29,8 +30,17 @@ export default function Home() {
           </div>
         </div>
       )}
-      <div className="flex flex-col bg-white rounded-3xl">
-        {modal.isOpen && <DesktopModal email={email} />}
+      <div className="flex flex-col bg-white md:rounded-3xl">
+        {modal.isOpen && (
+          <>
+            <div className="hidden md:contents">
+              <DesktopModal email={email} />
+            </div>
+            <div className="md:hidden">
+              <MobileModal email={email} />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

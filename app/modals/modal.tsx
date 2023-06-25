@@ -52,7 +52,7 @@ const Modal: React.FC<ModalProps> = ({
   }
   return (
     <div className="flex flex-col p-14">
-      <div className="bg-white w-[480px] h-[420px]">
+      <div>
         <Image src={IconSuccess} alt="Success Tick Icon" />
         <div className="text-6xl font-medium mt-8">{title}</div>
         <div className="text-xl mt-4 mb-8">{body}</div>
