@@ -6,7 +6,7 @@ import useModal from "../hooks/useModal";
 import Button from "./Button";
 
 interface FormProps {
-  handleEmail: string;
+  handleEmail: (value: string) => void;
 }
 
 const Form: React.FC<FormProps> = ({ handleEmail }) => {
