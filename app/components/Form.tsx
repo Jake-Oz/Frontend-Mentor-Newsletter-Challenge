@@ -5,7 +5,11 @@ import { useForm } from "react-hook-form";
 import useModal from "../hooks/useModal";
 import Button from "./Button";
 
-const Form = ({ handleEmail }) => {
+interface FormProps {
+  handleEmail: string;
+}
+
+const Form: React.FC<FormProps> = ({ handleEmail }) => {
   const {
     register,
     handleSubmit,
